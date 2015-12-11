@@ -1,6 +1,8 @@
 
 
-gen.plot4 <- function(file) {
+gen.plot4 <- function(file, png.file='plot1.png', png.width=480, png.height=480) {
+	png(png.file, width=png.width, height=png.height)
+
 	col.classes <- c('character', 'character', 'numeric', 'numeric', 'numeric', 'NULL', 'numeric', 'numeric', 'numeric')
 	data <- read.csv(file, header=TRUE, sep=';', na.strings='?', quote='', colClasses=col.classes)
 	data <- data[ data$Date %in% c('1/2/2007', '2/2/2007'), ]
@@ -30,6 +32,8 @@ gen.plot4 <- function(file) {
 	plot(data$date, data$Global_reactive_power, type='l', col='black', xlab='', ylab='')
 	title(xlab='datetime')
 	title(ylab='Global_reactive_power')
+
+	dev.off()
 }
 
 gen.plot4('household_power_consumption.txt')
