@@ -9,8 +9,8 @@ gen.plot1 <- function(file) {
 	col.classes <- c('myDate', 'NULL', 'numeric', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL')
 	data <- read.csv(file, header=TRUE, sep=';', na.strings='?', quote='', colClasses=col.classes)
 	data <- data[ data$Date >= '2007-02-01' & data$Date <= '2007-02-02', 'Global_active_power']
+
 	hist(data, col = 'red', xlab = 'Global Active Power (kilowats)', main = 'Global Active Power')
-	data
 }
 
 gen.plot1('household_power_consumption.txt')

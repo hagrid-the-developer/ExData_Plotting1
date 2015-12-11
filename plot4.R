@@ -12,13 +12,24 @@ gen.plot4 <- function(file) {
 			   Sub_metering_2=data$Sub_metering_2,
 			   Sub_metering_3=data$Sub_metering_3)
 
+	par(mfrow=c(2, 2))
+
+	plot(data$date, data$Global_active_power, type='l', col='black', xlab='', ylab='')
+	title(ylab='Global Active Power (kilowats)')
+
+	plot(data$date, data$Voltage, type='l', col='black', xlab='', ylab='')
+	title(xlab='datetime')
+	title(ylab='Voltage')
+
 	plot(data$date, data$Sub_metering_1, type='l', col='black', xlab='', ylab='')
 	lines(data$date, data$Sub_metering_2, type='l', col='red')
 	lines(data$date, data$Sub_metering_3, type='l', col='blue')
 	title(ylab='Energy sub metering')
-	legend('topright', lty = 1, bty = 'n', cex = 2.0, col = c('black', 'red', 'blue'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'))
+	legend('topright', lty = 1, bty = 'n', cex = 1.0, col = c('black', 'red', 'blue'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'))
 
-	data
+	plot(data$date, data$Global_reactive_power, type='l', col='black', xlab='', ylab='')
+	title(xlab='datetime')
+	title(ylab='Global_reactive_power')
 }
 
-#gen.plot4('household_power_consumption.txt')
+gen.plot4('household_power_consumption.txt')

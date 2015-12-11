@@ -8,8 +8,6 @@ gen.plot2 <- function(file) {
 
 	plot(data$date, data$Global_active_power, type='l', col='black', xlab='', ylab='')
 	title(ylab='Global Active Power (kilowats)')
-
-	data
 }
 
-#gen.plot2('household_power_consumption.txt')
+gen.plot2('household_power_consumption.txt')
