@@ -1,5 +1,5 @@
 
-gen.plot3 <- function(file, png.file='plot1.png', png.width=480, png.height=480) {
+gen.plot3 <- function(file, png.file='plot3.png', png.width=480, png.height=480) {
 	png(png.file, width=png.width, height=png.height)
 
 	col.classes <- c('character', 'character', 'NULL', 'NULL', 'NULL', 'NULL', 'numeric', 'numeric', 'numeric')
