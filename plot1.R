@@ -10,7 +10,7 @@ setClass('myDate')
 setAs('character', 'myDate', function(from) as.Date(from, format='%d/%m/%Y') )
 
 gen.plot1 <- function(file, png.file='plot1.png', png.width=480, png.height=480) {
-	png(png.file, width=png.width, height=png.height)
+	png(png.file, width=png.width, height=png.height, bg='transparent')
 
 	col.classes <- c('myDate', 'NULL', 'numeric', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL')
 	data <- read.csv(file, header=TRUE, sep=';', na.strings='?', quote='', colClasses=col.classes)

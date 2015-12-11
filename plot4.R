@@ -1,6 +1,6 @@
 
 gen.plot4 <- function(file, png.file='plot4.png', png.width=480, png.height=480) {
-	png(png.file, width=png.width, height=png.height)
+	png(png.file, width=png.width, height=png.height, bg='transparent')
 
 	col.classes <- c('character', 'character', 'numeric', 'numeric', 'numeric', 'NULL', 'numeric', 'numeric', 'numeric')
 	data <- read.csv(file, header=TRUE, sep=';', na.strings='?', quote='', colClasses=col.classes)
@@ -15,22 +15,16 @@ gen.plot4 <- function(file, png.file='plot4.png', png.width=480, png.height=480)
 
 	par(mfrow=c(2, 2))
 
-	plot(data$date, data$Global_active_power, type='l', col='black', xlab='', ylab='')
-	title(ylab='Global Active Power (kilowats)')
+	plot(data$date, data$Global_active_power, type='l', col='black', xlab='', ylab='Global Active Power (kilowats)')
 
-	plot(data$date, data$Voltage, type='l', col='black', xlab='', ylab='')
-	title(xlab='datetime')
-	title(ylab='Voltage')
+	plot(data$date, data$Voltage, type='l', col='black', xlab='datetime', ylab='Voltage')
 
-	plot(data$date, data$Sub_metering_1, type='l', col='black', xlab='', ylab='')
+	plot(data$date, data$Sub_metering_1, type='l', col='black', xlab='', ylab='Energy sub metering')
 	lines(data$date, data$Sub_metering_2, type='l', col='red')
 	lines(data$date, data$Sub_metering_3, type='l', col='blue')
-	title(ylab='Energy sub metering')
 	legend('topright', lty = 1, bty = 'n', cex = 1.0, col = c('black', 'red', 'blue'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'))
 
-	plot(data$date, data$Global_reactive_power, type='l', col='black', xlab='', ylab='')
-	title(xlab='datetime')
-	title(ylab='Global_reactive_power')
+	plot(data$date, data$Global_reactive_power, type='l', col='black', xlab='datetime', ylab='Global_reactive_power')
 
 	dev.off()
 }
