@@ -5,6 +5,10 @@ gen.plot2 <- function(file) {
 	data <- data[ data$Date %in% c('1/2/2007', '2/2/2007'), ]
 	data <- data.frame(date=strptime(paste(data$Date, data$Time), format='%d/%m/%Y %H:%M:%S'),
 			   Global_active_power=data$Global_active_power)
+
+	plot(data$date, data$Global_active_power, type='l', col='black', xlab='', ylab='')
+	title(ylab='Global Active Power (kilowats)')
+
 	data
 }
 
