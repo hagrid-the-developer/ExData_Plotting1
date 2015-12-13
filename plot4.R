@@ -15,7 +15,7 @@ gen.plot4 <- function(file, png.file='plot4.png', png.width=480, png.height=480)
 
 	par(mfrow=c(2, 2))
 
-	plot(data$date, data$Global_active_power, type='l', col='black', xlab='', ylab='Global Active Power (kilowats)')
+	plot(data$date, data$Global_active_power, type='l', col='black', xlab='', ylab='Global Active Power')
 
 	plot(data$date, data$Voltage, type='l', col='black', xlab='datetime', ylab='Voltage')
 
