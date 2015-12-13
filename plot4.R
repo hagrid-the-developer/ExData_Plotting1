@@ -1,4 +1,12 @@
-
+# This function loads the data and draws the graphs.
+#
+# 1. It loads all rows of the data. It loads all columns as well, because
+#    all columns are needed at this moment.
+# 2. It selects rows that are needed to display the graph. Rows are selected
+#    according to the first column and string comparisions are performed.
+# 3. New data frame is created. Its first column contains Date, that is
+#    created from the first and second columns of the previous data.frame.
+# 4. Graphs are drawn.
 gen.plot4 <- function(file, png.file='plot4.png', png.width=480, png.height=480) {
 	png(png.file, width=png.width, height=png.height, bg='transparent')
 

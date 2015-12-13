@@ -1,4 +1,13 @@
-
+# This function loads the data and draws the graph.
+#
+# 1. It loads all rows of the data. It loads only the first, the second column
+#    and last three columns. Other columns aren't needed. Date and time columns
+#    are loaded as strings.
+# 2. It selects rows that are needed to display the graph. Rows are selected
+#    according to the first column and string comparisions are performed.
+# 3. New data frame is created. Its first column contains Date, that is
+#    created from the first and second columns of the previous data.frame.
+# 4. Graph is drawn.
 gen.plot3 <- function(file, png.file='plot3.png', png.width=480, png.height=480) {
 	png(png.file, width=png.width, height=png.height, bg='transparent')
 
